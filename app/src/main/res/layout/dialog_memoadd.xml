@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:paddingTop="12dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:textColor="#FF222222"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"
+        android:text="Add Memo"/>
+
+    <EditText
+        android:id="@+id/memoInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:hint="Memo to add"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:textColor="#FFFF5555"
+            android:text="CANCEL"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:textColor="#FF8888EE"
+            android:text="ADD"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+
+    </LinearLayout>
+
+</LinearLayout>
