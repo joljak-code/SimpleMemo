@@ -26,12 +26,12 @@
             android:background="#FFDDDDDD"/>
 
         <ImageButton
-            android:id="@+id/deleteBtn"
+            android:id="@+id/editBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/delete"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
+            android:src="@mipmap/edit"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored" />
 
         <TextView
             android:layout_width="1dp"
@@ -41,12 +41,12 @@
             android:background="#FFDDDDDD"/>
 
         <ImageButton
-            android:id="@+id/editBtn"
+            android:id="@+id/deleteBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/edit"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+            android:src="@mipmap/delete"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
 
     </LinearLayout>
 

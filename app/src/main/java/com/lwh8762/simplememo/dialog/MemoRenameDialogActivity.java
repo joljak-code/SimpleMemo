@@ -47,6 +47,7 @@ public class MemoRenameDialogActivity extends Activity {
             public void onClick(View v) {
                 String memo = memoInput.getText().toString();
                 if (memo.isEmpty()) return;
+
                 MemoDataManager.setMemo(position, memo);
                 MemoEditDialogActivity.getMemoEditDialogActivity().notifyDataSetChanged();
                 MemoService.getMemoService().updateNotification();

@@ -3,6 +3,7 @@
     package="com.lwh8762.simplememo">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -19,16 +20,30 @@
         </activity>
         <activity
             android:name=".dialog.MemoAddDialogActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog" >
+            android:theme="@android:style/Theme.Material.Light.Dialog"
+            android:excludeFromRecents="true"
+            android:noHistory="true" >
         </activity>
         <activity
             android:name=".dialog.MemoEditDialogActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog" >
+            android:theme="@android:style/Theme.Material.Light.Dialog"
+            android:excludeFromRecents="true"
+            android:noHistory="true" >
         </activity>
         <activity
             android:name=".dialog.MemoRenameDialogActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog" >
+            android:theme="@android:style/Theme.Material.Light.Dialog"
+            android:excludeFromRecents="true"
+            android:noHistory="true" >
         </activity>
+        <receiver android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:label="BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <service android:name=".MemoService" >
 
         </service>

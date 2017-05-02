@@ -39,7 +39,6 @@ public class MemoService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this, "Start Service", Toast.LENGTH_SHORT).show();
 
         me = this;
 
@@ -56,7 +55,7 @@ public class MemoService extends Service {
         this.registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Toast.makeText(context, "Memo Add", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Memo Add", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
                 getApplicationContext().sendBroadcast(i);
                 showMemoAddDialog();
@@ -65,7 +64,7 @@ public class MemoService extends Service {
         this.registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Toast.makeText(context, "All Memo View", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "All Memo View", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
                 getApplicationContext().sendBroadcast(i);
                 showMemoEditDialog();

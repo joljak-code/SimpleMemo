@@ -77,6 +77,20 @@ public class MemoEditDialogActivity extends Activity {
             TextView contentView = (TextView) view.findViewById(R.id.contentView);
             contentView.setText(MemoDataManager.getMemo(position));
 
+            ImageButton editBtn = (ImageButton) view.findViewById(R.id.editBtn);
+            editBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Intent intent = new Intent(MemoEditDialogActivity.this, MemoRenameDialogActivity.class);
+                        intent.putExtra("position", position);
+                        PendingIntent pendingIntent = PendingIntent.getActivity(MemoEditDialogActivity.this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+                        pendingIntent.send();
+                    }catch (PendingIntent.CanceledException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
             ImageButton deleteBtn = (ImageButton) view.findViewById(R.id.deleteBtn);
             deleteBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -94,20 +108,6 @@ public class MemoEditDialogActivity extends Activity {
                         }
                     });
                     builder.create().show();
-                }
-            });
-            ImageButton editBtn = (ImageButton) view.findViewById(R.id.editBtn);
-            editBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        Intent intent = new Intent(MemoEditDialogActivity.this, MemoRenameDialogActivity.class);
-                        intent.putExtra("position", position);
-                        PendingIntent pendingIntent = PendingIntent.getActivity(MemoEditDialogActivity.this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
-                        pendingIntent.send();
-                    }catch (PendingIntent.CanceledException e) {
-                        e.printStackTrace();
-                    }
                 }
             });
 
